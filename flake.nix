@@ -1,5 +1,5 @@
 {
-  desccription = "jbgreer flake";
+  description = "jbgreer flake";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.11";
