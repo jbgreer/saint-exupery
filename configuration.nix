@@ -26,7 +26,9 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       pfetch
+      zsh
     ];
+    shell = pkgs.zsh;
   };
 
   # Allow unfree packages
@@ -43,6 +45,10 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
+  };
+
+  programs.zsh = {
+    enable = true;
   };
   
   # WARNING! Be careful when changing.
