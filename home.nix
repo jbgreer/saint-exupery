@@ -4,13 +4,8 @@
   home.username = "jbgreer";
   home.homeDirectory = "/home/jbgreer";
 
-  # DO NOT CHANGE WITHOUT READING MANUAL
-  home.stateVersion = "23.11";
-
   home.packages = with pkgs; [
     pfetch
-    #neovim
-    #zsh
   ];
 
   home.file = {
@@ -20,15 +15,20 @@
     EDITOR = "nvim";
   };
 
-  # set neovim as default editor
+  imports = [
+    ./zsh.nix
+  ];
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
   };
 
-  programs.zsh = {
-    enable = true;
-  };
+  xdg.enable = true;
 
+  # self-manage home-manager
   programs.home-manager.enable = true;
+
+  # DO NOT CHANGE WITHOUT READING MANUAL
+  home.stateVersion = "23.11";
 }
