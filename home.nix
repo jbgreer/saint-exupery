@@ -18,6 +18,8 @@
     ./zsh.nix
   ];
 
+  programs.fzf.enable = true;
+
   xdg.enable = true;
 
   colorScheme = nix-colors.colorSchemes.gruvbox-dark-medium;
