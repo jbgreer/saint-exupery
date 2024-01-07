@@ -7,11 +7,14 @@
   home.packages = with pkgs; [
     gcc
     cmake
+    fd
     lua-language-server
     makeWrapper
     ninja
     pfetch
+    ripgrep
     rnix-lsp
+    tree-sitter
   ];
 
   home.file = {

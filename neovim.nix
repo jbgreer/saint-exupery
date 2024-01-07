@@ -15,9 +15,12 @@
     vimdiffAlias = true;
 
     extraPackages = with pkgs; [
+      fd
       fzf
       lua-language-server
+      ripgrep
       rnix-lsp
+      tree-sitter
     ];
 
     extraLuaConfig  = ''
