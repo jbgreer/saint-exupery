@@ -10,9 +10,11 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, ... }:
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, nix-colors, ... }:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -32,6 +34,7 @@
       homeConfigurations = {
         "jbgreer" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
+          extraSpecialArgs = { inherit nix-colors; };
           modules = [ ./home.nix ];
         };
       };

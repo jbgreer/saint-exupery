@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, nix-colors, ... }:
 
 {
   home.username = "jbgreer";
@@ -12,12 +12,15 @@
   };
 
   imports = [
+    nix-colors.homeManagerModules.default
     ./git.nix
     ./neovim.nix
     ./zsh.nix
   ];
 
   xdg.enable = true;
+
+  colorScheme = nix-colors.colorSchemes.gruvbox-dark-medium;
 
   # self-manage home-manager
   programs.home-manager.enable = true;
