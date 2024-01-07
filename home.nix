@@ -11,18 +11,10 @@
   home.file = {
   };
 
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
-
   imports = [
+    ./neovim.nix
     ./zsh.nix
   ];
-
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
 
   xdg.enable = true;
 
