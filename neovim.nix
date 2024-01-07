@@ -15,7 +15,9 @@
     vimdiffAlias = true;
 
     extraPackages = with pkgs; [
+      fzf
       lua-language-server
+      rnix-lsp
     ];
 
     extraLuaConfig  = ''
@@ -26,18 +28,18 @@
 
       {
         plugin = nvim-lspconfig;
-	config = toLuaFile ./nvim/plugin/lsp.lua;
+        config = toLuaFile ./nvim/plugin/lsp.lua;
       }
 
       {
         plugin = comment-nvim;
-	config = toLua "require(\"Comment\").setup()";
+        config = toLua "require(\"Comment\").setup()";
 
       }
 
       {
         plugin = gruvbox-nvim;
-	config = "colorscheme gruvbox";
+        config = "colorscheme gruvbox";
       }
 
       neodev-nvim
@@ -45,12 +47,12 @@
       nvim-cmp
       {
         plugin = nvim-cmp;
-	config = toLuaFile ./nvim/plugin/cmp.lua;
+        config = toLuaFile ./nvim/plugin/cmp.lua;
       }
 
       {
         plugin = telescope-nvim;
-	config = toLuaFile ./nvim/plugin/telescope.lua;
+        config = toLuaFile ./nvim/plugin/telescope.lua;
       }
 
       telescope-fzf-native-nvim
@@ -67,10 +69,10 @@
       {
         plugin = (nvim-treesitter.withPlugins (p: [
           p.tree-sitter-nix
-	  p.tree-sitter-vim
-	  p.tree-sitter-lua
+          p.tree-sitter-vim
+          p.tree-sitter-lua
         ]));
-	config = toLuaFile ./nvim/plugin/treesitter.lua;
+        config = toLuaFile ./nvim/plugin/treesitter.lua;
       }
 
       vim-nix

@@ -5,7 +5,13 @@
   home.homeDirectory = "/home/jbgreer";
 
   home.packages = with pkgs; [
+    gcc
+    cmake
+    lua-language-server
+    makeWrapper
+    ninja
     pfetch
+    rnix-lsp
   ];
 
   home.file = {

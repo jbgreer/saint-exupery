@@ -24,7 +24,9 @@
   users.users.jbgreer = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ ];
+    packages = with pkgs; [ 
+      lua-language-server 
+    ];
     shell = pkgs.zsh;
   };
 
