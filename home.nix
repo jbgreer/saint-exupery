@@ -1,20 +1,32 @@
-{ config, pkgs, nix-colors, ... }:
+{ config, lib, pkgs, nix-colors, ... }:
 
 {
   home.username = "jbgreer";
   home.homeDirectory = "/home/jbgreer";
 
   home.packages = with pkgs; [
-    gcc
-    cmake
-    fd
-    lua-language-server
+    bat                     # cat substitute
+    gcc                     # compiler
+    cmake                   # builder
+    fd                      # file display
+    file                    # learn file type
+    fzf                     # fast finder
+    gnupg                   # encrypt/decrypt/sign/validate
+    lua-language-server     # for neovime
     makeWrapper
-    ninja
+    ninja                   # builder
+    nix-zsh-completions     # zsh completions for nix
+    nixpkgs-fmt             # format nix files
     pfetch
-    ripgrep
-    rnix-lsp
-    tree-sitter
+    ripgrep                 # grep
+    rnix-lsp                # for neovim
+    tree-sitter             # for neovim
+    ripgrep                 # grep substitute
+    tldr                    # better man pages
+    tmux                    # terminal multiplexer
+    unzip                   # uncompress files
+    zellij                  # terminal multiplexer
+    zip                     # compress files
   ];
 
   home.file = {
@@ -39,3 +51,4 @@
   # DO NOT CHANGE WITHOUT READING MANUAL
   home.stateVersion = "23.11";
 }
+

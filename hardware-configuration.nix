@@ -8,6 +8,7 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
+  boot.consoleLogLevel = 0;
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-amd" ];
@@ -61,6 +62,11 @@
   swapDevices =
     [ { device = "/dev/disk/by-label/SWAPFS"; }
     ];
+
+  services.btrfs.autoScrub = {
+    enable = true;
+    interval = "weekly";
+  };
 
   networking.useDHCP = lib.mkDefault true;
   networking.interfaces.wlp1s0.useDHCP = lib.mkDefault true;
