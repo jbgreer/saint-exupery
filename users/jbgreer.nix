@@ -34,9 +34,9 @@
 
   imports = [
     nix-colors.homeManagerModules.default
-    ./git.nix
-    ./neovim.nix
-    ./zsh.nix
+    ../apps/git.nix
+    ../apps/neovim.nix
+    ../apps/zsh.nix
   ];
 
   programs.fzf.enable = true;

@@ -23,11 +23,11 @@
 
       nixosConfigurations = {
         saint-exupery = lib.nixosSystem {
-	  inherit system;
-	  modules = [ 
-	    nixos-hardware.nixosModules.framework-13-7040-amd
-	    ./configuration.nix 
-	  ];
+        inherit system;
+        modules = [
+          nixos-hardware.nixosModules.framework-13-7040-amd
+          ./hosts/saint-exupery/configuration.nix
+        ];
         };
       };
 
@@ -35,7 +35,7 @@
         "jbgreer" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = { inherit nix-colors; };
-          modules = [ ./home.nix ];
+          modules = [ ./users/jbgreer.nix ];
         };
       };
 

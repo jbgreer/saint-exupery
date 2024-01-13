@@ -34,7 +34,7 @@
   # TODO set username
   users.users.jbgreer = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "audio" ];
     packages = with pkgs; [ 
       lua-language-server 
     ];
