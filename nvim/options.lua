@@ -10,6 +10,7 @@ vim.o.relativenumber = true
 
 vim.o.signcolumn = 'yes'
 
+vim.o.expandtab = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 
