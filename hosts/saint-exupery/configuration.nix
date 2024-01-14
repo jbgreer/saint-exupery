@@ -61,24 +61,23 @@
     ];
   };
 
-
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
       fira-code
-      ubuntu_font_family
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      fira-code-symbols
+      (nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];
     fontconfig = {
+      enable = true;
       defaultFonts = {
-        sansSerif = [ "JetBrainsMono" ];
-        serif = [ "JetBrainsMono" ];
-        monospace = [ "JetBrainsMono" ];
+        sansSerif = [ "FiraCode" ];
+        serif = [ "FiraCode" ];
+        monospace = [ "FiraCode" ];
       };
     };
   };
 
-  # sound related
   services.pipewire = {
     enable = true;
     alsa.enable = true;

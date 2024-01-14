@@ -15,15 +15,15 @@
       scrolling.history = 1000;
       font = {
         normal = {
-          family = "JetBrains Mono Nerd";
+          family = "Fira Code";
           style = "Regular";
         };
         bold = {
-          family = "JetBrains Mono Nerd";
+          family = "Fira Code";
           style = "Bold";
         };
         italic = {
-          family = "JetBrains Mono Nerd";
+          family = "Fira Code";
           style = "Italic";
         };
         size = 14;

@@ -9,7 +9,7 @@ configuration {
 	show-icons: true;
 	icon-theme: "Papirus";
 	location: 0;
-	font: "JetBrainsMono Nerd Font 12";	
+	font: "Fira Code 12";	
 	display-drun: "Launch:";
 }
 

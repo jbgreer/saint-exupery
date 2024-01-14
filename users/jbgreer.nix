@@ -12,6 +12,8 @@
     fd                      # file display
     file                    # learn file type
     firefox                 # web browser
+    fira-code
+    fira-code-symbols
     font-awesome            # font
     fzf                     # fast finder
     gcc                     # compiler
@@ -77,7 +79,6 @@
     };
   };
 
-  #colorScheme = nix-colors.colorSchemes.gruvbox-dark-medium;
   colorScheme = nix-colors.colorSchemes.onedark;
 
   # self-manage home-manager
