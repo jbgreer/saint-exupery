@@ -41,8 +41,8 @@
       }
 
       {
-        plugin = gruvbox-nvim;
-        config = "colorscheme gruvbox";
+        plugin = onedark-nvim;
+        config = "colorscheme onedark";
       }
 
       neodev-nvim
