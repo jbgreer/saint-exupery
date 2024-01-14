@@ -11,10 +11,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprland.url = "github:hyprwm/Hyprland";
+
     nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, nix-colors, ... }:
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, nix-colors, ... } @ inputs :
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -23,7 +25,10 @@
 
       nixosConfigurations = {
         saint-exupery = lib.nixosSystem {
-        inherit system;
+          specialArgs = {
+            inherit system;
+            inherit inputs; 
+        };
         modules = [
           nixos-hardware.nixosModules.framework-13-7040-amd
           ./hosts/saint-exupery/configuration.nix

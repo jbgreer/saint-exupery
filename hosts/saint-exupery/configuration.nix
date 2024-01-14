@@ -1,5 +1,5 @@
 # configuration_bootstrap.nix
-{ config, pkgs, lib, ... }: {
+{ inputs, config, pkgs, lib, ... }: {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -61,9 +61,59 @@
     ];
   };
 
+
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      fira-code
+      ubuntu_font_family
+      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    ];
+    fontconfig = {
+      defaultFonts = {
+        sansSerif = [ "JetBrainsMono" ];
+        serif = [ "JetBrainsMono" ];
+        monospace = [ "JetBrainsMono" ];
+      };
+    };
+  };
+
+  # sound related
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
+  hardware.pulseaudio.enable = false;
+  sound.enable = true;
+  security.rtkit.enable = true;
+
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  };
+
+  services.upower = {
+    enable = true;
+  };
+
   # must enable here because it is available system wide
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
+
+  # required for hyprland
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = [
+        pkgs.xdg-desktop-portal
+        pkgs.xdg-desktop-portal-gtk
+      ];
+    };
+  };
+
   
   # WARNING! Be careful when changing.
   system.stateVersion = "23.11";
