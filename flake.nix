@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.11";
 
+    unstable.url = "nixpkgs/nixos-unstable";
+
     nixos-hardware.url = "github:NixOS//nixos-hardware/master";
 
     home-manager = {
@@ -16,7 +18,7 @@
     nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, nix-colors, ... } @ inputs :
+  outputs = { self, nixpkgs, unstable, nixos-hardware, home-manager, hyprland, nix-colors, ... } @ inputs :
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -39,7 +41,10 @@
       homeConfigurations = {
         "jbgreer" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          extraSpecialArgs = { inherit nix-colors; };
+          extraSpecialArgs = {
+            inherit nix-colors;
+            inherit unstable;
+          };
           modules = [ ./users/jbgreer.nix ];
         };
       };

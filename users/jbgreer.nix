@@ -1,4 +1,4 @@
-{ config, lib, pkgs, nix-colors, ... }:
+{ config, lib, pkgs, unstable, nix-colors, ... }:
 
 {
   home.username = "jbgreer";
