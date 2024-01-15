@@ -50,6 +50,7 @@
     ../apps/git.nix
     ../apps/kitty.nix
     ../apps/neovim.nix
+    #../apps/rofi.nix
     ../apps/waybar.nix
     ../apps/zsh.nix
   ];
@@ -61,6 +62,7 @@
     recursive = true;
   };
 
+  # issues using rofi.nix themes at the moment?
   home.file.".config/rofi" = {
     source = ../apps/rofi;
     recursive = true;
