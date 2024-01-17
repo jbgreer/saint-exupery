@@ -1,45 +1,52 @@
-{ config, lib, pkgs, unstable, nix-colors, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  unstable,
+  nix-colors,
+  ...
+}:
 
 {
   home.username = "jbgreer";
   home.homeDirectory = "/home/jbgreer";
 
   home.packages = with pkgs; [
-    alacritty               # terminal
-    bat                     # cat substitute
-    brightnessctl           # read and control device brightness
-    cmake                   # builder
-    fd                      # file display
-    file                    # learn file type
-    firefox                 # web browser
+    alacritty # terminal
+    bat # cat substitute
+    brightnessctl # read and control device brightness
+    cmake # builder
+    fd # file display
+    file # learn file type
+    firefox # web browser
     fira-code
     fira-code-symbols
-    font-awesome            # font
-    fzf                     # fast finder
-    gcc                     # compiler
-    gnupg                   # encrypt/decrypt/sign/validate
-    kitty                   # terminal
-    libnotify               # for hyprland - notification daemon support
-    lua-language-server     # for neovime
-    material-icons          # icons
-    makeWrapper             # for Nixos?
-    ninja                   # builder
-    nix-zsh-completions     # zsh completions for nix
-    nixpkgs-fmt             # format nix files
-    pavucontrol             # read and control sound volume
-    pfetch                  # shell-based system info tool
-    rnix-lsp                # for neovim
-    ripgrep                 # grep substitute
-    rofi-wayland            # for hyprland dmenu support
-    swaynotificationcenter  # for hyprland
-    swww                    # for hyprland
-    tldr                    # better man pages
-    tmux                    # terminal multiplexer
-    tree-sitter             # for neovim
-    unzip                   # uncompress files
-    wl-clipboard            # wayland cut and paste clipboard
-    zellij                  # terminal multiplexer
-    zip                     # compress files
+    font-awesome # font
+    fzf # fast finder
+    gcc # compiler
+    gnupg # encrypt/decrypt/sign/validate
+    kitty # terminal
+    libnotify # for hyprland - notification daemon support
+    lua-language-server # for neovime
+    material-icons # icons
+    makeWrapper # for Nixos?
+    ninja # builder
+    nix-zsh-completions # zsh completions for nix
+    nixpkgs-fmt # format nix files
+    pavucontrol # read and control sound volume
+    pfetch # shell-based system info tool
+    rnix-lsp # for neovim
+    ripgrep # grep substitute
+    rofi-wayland # for hyprland dmenu support
+    swaynotificationcenter # for hyprland
+    swww # for hyprland
+    tldr # better man pages
+    tmux # terminal multiplexer
+    tree-sitter # for neovim
+    unzip # uncompress files
+    wl-clipboard # wayland cut and paste clipboard
+    zellij # terminal multiplexer
+    zip # compress files
     (import ../scripts/task-waybar.nix { inherit pkgs; })
   ];
 
@@ -89,4 +96,3 @@
   # DO NOT CHANGE WITHOUT READING MANUAL
   home.stateVersion = "23.11";
 }
-

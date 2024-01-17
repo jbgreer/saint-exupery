@@ -2,15 +2,14 @@
   description = "jbgreer flake";
 
   nixConfig = {
-    experimental-features = ["nix-command" "flakes"];
-
-    substituters = [
-      "https://cache.nixos.org"
+    experimental-features = [
+      "nix-command"
+      "flakes"
     ];
 
-    extra-substituters = [
-      "https://nix-community.cachix.org"
-    ];
+    substituters = [ "https://cache.nixos.org" ];
+
+    extra-substituters = [ "https://nix-community.cachix.org" ];
 
     extra-trusted-public-keys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
@@ -33,25 +32,39 @@
     hyprland.url = "github:hyprwm/Hyprland";
 
     nix-colors.url = "github:misterio77/nix-colors";
+
+    nixfmt-rfc.url = "github:piegamesde/nixfmt/rfc101-style";
   };
 
-  outputs = { self, nixpkgs, unstable, nixos-hardware, home-manager, hyprland, nix-colors, ... } @ inputs :
+  outputs =
+    {
+      self,
+      nixpkgs,
+      unstable,
+      nixos-hardware,
+      home-manager,
+      hyprland,
+      nix-colors,
+      nixfmt-rfc,
+      ...
+    }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-    in {
+    in
+    {
 
       nixosConfigurations = {
         saint-exupery = lib.nixosSystem {
           specialArgs = {
             inherit system;
-            inherit inputs; 
-        };
-        modules = [
-          nixos-hardware.nixosModules.framework-13-7040-amd
-          ./hosts/saint-exupery/configuration.nix
-        ];
+            inherit inputs;
+          };
+          modules = [
+            nixos-hardware.nixosModules.framework-13-7040-amd
+            ./hosts/saint-exupery/configuration.nix
+          ];
         };
       };
 
@@ -66,6 +79,6 @@
         };
       };
 
+      formatter.${system} = nixfmt-rfc.packages.${system}.default;
     };
 }
-

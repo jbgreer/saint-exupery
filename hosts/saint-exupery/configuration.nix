@@ -1,15 +1,26 @@
 # configuration_bootstrap.nix
-{ inputs, config, pkgs, lib, ... }: {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+{
+  inputs,
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader settings
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.enable = true;
-  boot.supportedFilesystems = [ "btrfs" "ntfs" "fat32" ];
+  boot.supportedFilesystems = [
+    "btrfs"
+    "ntfs"
+    "fat32"
+  ];
   hardware.enableAllFirmware = true;
 
   # TODO set hostname
@@ -34,10 +45,13 @@
   # TODO set username
   users.users.jbgreer = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "video" "audio" ];
-    packages = with pkgs; [ 
-      lua-language-server 
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "video"
+      "audio"
     ];
+    packages = with pkgs; [ lua-language-server ];
     shell = pkgs.zsh;
   };
 
@@ -46,7 +60,7 @@
 
   # system-wide packages
   environment = {
-    shells = with pkgs; [ 
+    shells = with pkgs; [
       bash
       zsh
     ];
@@ -119,11 +133,9 @@
     };
   };
 
-  
   # WARNING! Be careful when changing.
   system.stateVersion = "23.11";
 
   # Enable use of flakes
   nix.settings.experimental-features = "nix-command flakes";
 }
-
