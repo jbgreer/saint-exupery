@@ -46,6 +46,7 @@
   imports = [
     nix-colors.homeManagerModules.default
     ../apps/alacritty.nix
+    ../apps/direnv.nix
     ../apps/fzf.nix
     ../apps/git.nix
     ../apps/kitty.nix
