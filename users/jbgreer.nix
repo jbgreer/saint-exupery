@@ -50,7 +50,6 @@
     ../apps/git.nix
     ../apps/kitty.nix
     ../apps/neovim.nix
-    #../apps/rofi.nix
     ../apps/waybar.nix
     ../apps/zsh.nix
   ];

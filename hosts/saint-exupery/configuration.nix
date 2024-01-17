@@ -98,6 +98,12 @@
     enable = true;
   };
 
+  programs._1password.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = [ "jbgreer" ];
+  };
+
   # must enable here because it is available system wide
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
