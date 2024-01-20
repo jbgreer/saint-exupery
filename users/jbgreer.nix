@@ -61,6 +61,7 @@
     ../apps/git.nix
     ../apps/kitty.nix
     ../apps/nixvim.nix
+    ../apps/starship.nix
     ../apps/waybar.nix
     ../apps/zsh.nix
   ];
