@@ -34,6 +34,11 @@
     nix-colors.url = "github:misterio77/nix-colors";
 
     nixfmt-rfc.url = "github:piegamesde/nixfmt/rfc101-style";
+
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-23.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -46,6 +51,7 @@
       hyprland,
       nix-colors,
       nixfmt-rfc,
+      nixvim,
       ...
     }@inputs:
     let
@@ -74,6 +80,7 @@
           extraSpecialArgs = {
             inherit nix-colors;
             inherit unstable;
+            inherit nixvim;
           };
           modules = [ ./users/jbgreer.nix ];
         };

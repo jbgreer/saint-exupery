@@ -4,6 +4,7 @@
   pkgs,
   unstable,
   nix-colors,
+  nixvim,
   ...
 }:
 
@@ -52,12 +53,14 @@
 
   imports = [
     nix-colors.homeManagerModules.default
+    nixvim.homeManagerModules.nixvim
     ../apps/alacritty.nix
     ../apps/direnv.nix
     ../apps/fzf.nix
     ../apps/git.nix
     ../apps/kitty.nix
-    ../apps/neovim.nix
+    #../apps/neovim.nix
+    ../apps/nixvim.nix
     ../apps/waybar.nix
     ../apps/zsh.nix
   ];
