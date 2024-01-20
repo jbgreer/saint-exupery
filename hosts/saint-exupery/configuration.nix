@@ -69,6 +69,7 @@
       cryptsetup
       git
       home-manager
+      rustup
       wget
       vim
       zsh

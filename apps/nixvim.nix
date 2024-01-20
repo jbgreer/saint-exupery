@@ -77,6 +77,8 @@
 
           rust-analyzer = {
             enable = true;
+	    installRustc = false;
+	    installCargo = false;
           };
         };
       };
