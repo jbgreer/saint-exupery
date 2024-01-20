@@ -138,6 +138,7 @@
       # nvim-telescope/telescope.nvim: a highly extendable fuzzy finder over lists
       telescope = {
         enable = true;
+        defaults.file.ignore_patterns = [ "^.git/" ];
         # use fzf
         extensions.fzf-native = {
             enable = true;
