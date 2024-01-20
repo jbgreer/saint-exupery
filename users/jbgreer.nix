@@ -27,6 +27,7 @@
     gcc # compiler
     gnupg # encrypt/decrypt/sign/validate
     kitty # terminal
+    lazygit # git ui
     libnotify # for hyprland - notification daemon support
     lua-language-server # for neovime
     material-icons # icons
@@ -59,7 +60,6 @@
     ../apps/fzf.nix
     ../apps/git.nix
     ../apps/kitty.nix
-    #../apps/neovim.nix
     ../apps/nixvim.nix
     ../apps/waybar.nix
     ../apps/zsh.nix

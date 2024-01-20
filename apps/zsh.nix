@@ -8,6 +8,7 @@
     enableCompletion = true;
     shellAliases = {
       l = "ls -al";
+      vim = "nvim";
     };
     loginExtra = ''
       # start hyprland only on 1st console
