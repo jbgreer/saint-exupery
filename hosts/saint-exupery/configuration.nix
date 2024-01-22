@@ -104,13 +104,12 @@
   sound.enable = true;
   security.rtkit.enable = true;
 
-
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
   # must set this manually if not enabling sway
-  security.pam.services.swaylock = {};
+  security.pam.services.swaylock = { };
 
   services.upower = {
     enable = true;

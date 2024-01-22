@@ -1,4 +1,9 @@
-{ config, pkgs, nixvim, ... }:
+{
+  config,
+  pkgs,
+  nixvim,
+  ...
+}:
 
 {
   programs.nixvim = {
@@ -83,7 +88,7 @@
 
           rust-analyzer = {
             enable = true;
-	          installRustc = false;
+            installRustc = false;
             installCargo = false;
           };
         };
@@ -126,7 +131,10 @@
                 end
               end
             '';
-            modes = [ "i" "s" ];
+            modes = [
+              "i"
+              "s"
+            ];
           };
         };
         sources = [
@@ -147,13 +155,13 @@
         defaults.file.ignore_patterns = [ "^.git/" ];
         # use fzf
         extensions.fzf-native = {
-            enable = true;
-            caseMode = "smart_case";
-            fuzzy = true;
-            overrideFileSorter = true;
-            overrideGenericSorter = true;
+          enable = true;
+          caseMode = "smart_case";
+          fuzzy = true;
+          overrideFileSorter = true;
+          overrideGenericSorter = true;
         };
-	  };
+      };
 
       # nvim-treesitter/nvim-treesitter: interface for tree-sitter highlighter
       treesitter = {
@@ -169,4 +177,3 @@
     };
   };
 }
-

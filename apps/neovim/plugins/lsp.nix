@@ -31,7 +31,11 @@
 
       lsp-format = {
         enable = true;
-        lspServersToEnable = [ "elixirls" "lua-ls" "rust-analyzer" ];
+        lspServersToEnable = [
+          "elixirls"
+          "lua-ls"
+          "rust-analyzer"
+        ];
       };
     };
   };

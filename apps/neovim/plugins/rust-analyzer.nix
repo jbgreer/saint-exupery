@@ -3,7 +3,7 @@
 
     lsp.servers.rust-analyzer = {
       enable = true;
-      installRustc= false;
+      installRustc = false;
       installCargo = false;
     };
   };

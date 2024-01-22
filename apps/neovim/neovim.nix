@@ -1,4 +1,9 @@
-{ config, pkgs, nixvim, ... }:
+{
+  config,
+  pkgs,
+  nixvim,
+  ...
+}:
 
 {
   imports = [
@@ -25,4 +30,4 @@
     highlight.ExtraWhitespace.bg = "red";
     match.ExtraWhitespace = "\\s\\+$";
   };
-} 
+}
