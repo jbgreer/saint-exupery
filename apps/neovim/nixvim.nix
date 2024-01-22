@@ -4,6 +4,12 @@
   programs.nixvim = {
     enable = true;
 
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+
+    luaLoader.enable = true;
+
     colorschemes.onedark.enable = true;
 
     globals = {
@@ -77,8 +83,8 @@
 
           rust-analyzer = {
             enable = true;
-	    installRustc = false;
-	    installCargo = false;
+	          installRustc = false;
+            installCargo = false;
           };
         };
       };

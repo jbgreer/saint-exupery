@@ -35,6 +35,11 @@
 
     nixfmt-rfc.url = "github:piegamesde/nixfmt/rfc101-style";
 
+    nix-index-database = {
+      url = "github:Mic92/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixvim = {
       url = "github:nix-community/nixvim/nixos-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -50,6 +55,7 @@
       home-manager,
       hyprland,
       nix-colors,
+      nix-index-database,
       nixfmt-rfc,
       nixvim,
       ...
@@ -82,7 +88,10 @@
             inherit unstable;
             inherit nixvim;
           };
-          modules = [ ./users/jbgreer.nix ];
+          modules = [
+            nix-index-database.hmModules.nix-index
+            ./users/jbgreer.nix
+          ];
         };
       };
 

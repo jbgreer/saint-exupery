@@ -20,9 +20,9 @@
     fd # file display
     file # learn file type
     firefox # web browser
-    fira-code
-    fira-code-symbols
-    font-awesome # font
+    fira-code # font
+    fira-code-symbols # additional font
+    font-awesome # additional font
     fzf # fast finder
     gcc # compiler
     gnupg # encrypt/decrypt/sign/validate
@@ -60,7 +60,7 @@
     ../apps/fzf.nix
     ../apps/git.nix
     ../apps/kitty.nix
-    ../apps/nixvim.nix
+    ../apps/neovim/neovim.nix
     ../apps/starship.nix
     ../apps/waybar.nix
     ../apps/zsh.nix
@@ -93,6 +93,9 @@
   };
 
   colorScheme = nix-colors.colorSchemes.onedark;
+
+  # integrate nix-index into shell
+  programs.nix-index.enable = true;
 
   # self-manage home-manager
   programs.home-manager.enable = true;
