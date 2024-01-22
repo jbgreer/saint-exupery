@@ -40,7 +40,7 @@
     rnix-lsp # for neovim
     ripgrep # grep substitute
     rofi-wayland # for hyprland dmenu support
-    swaynotificationcenter # for hyprland
+    swaynotificationcenter # notifications for hyprland
     swww # for hyprland
     tldr # better man pages
     tmux # terminal multiplexer
@@ -62,6 +62,7 @@
     ../apps/kitty.nix
     ../apps/neovim/neovim.nix
     ../apps/starship.nix
+    ../apps/swaylock.nix
     ../apps/waybar.nix
     ../apps/zsh.nix
   ];
