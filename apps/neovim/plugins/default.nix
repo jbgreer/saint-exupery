@@ -5,7 +5,8 @@
     ./dap.nix
     ./elixirls.nix
     ./floaterm.nix
-    ./harpoon.nix
+    ./fugitive.nix
+    #./harpoon.nix
     ./lsp.nix
     ./lua-ls.nix
     ./lualine.nix
