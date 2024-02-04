@@ -12,6 +12,8 @@
       grammarPackages = with config.programs.nixvim.plugins.treesitter.package.builtGrammars; [
         bash
         c
+        elixir
+        erlang
         html
         javascript
         latex

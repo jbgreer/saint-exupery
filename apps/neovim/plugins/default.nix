@@ -6,7 +6,6 @@
     ./elixirls.nix
     ./floaterm.nix
     ./fugitive.nix
-    #./harpoon.nix
     ./lsp.nix
     ./lua-ls.nix
     ./lualine.nix
