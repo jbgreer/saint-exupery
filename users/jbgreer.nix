@@ -14,6 +14,7 @@
 
   home.packages = with pkgs; [
     alacritty # terminal
+    asciidoctor # text formatting / type setting
     bat # cat substitute
     brightnessctl # read and control device brightness
     cmake # builder

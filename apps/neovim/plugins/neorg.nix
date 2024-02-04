@@ -34,8 +34,7 @@
         '';
 
         "core.dirman".config.workspaces = {
-          notes = "~/notes";
-          nix = "~/perso/nix/notes";
+          notes = "~/Notes";
         };
 
         "core.concealer".__empty = null;
