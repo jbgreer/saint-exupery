@@ -33,8 +33,11 @@
           end
         '';
 
-        "core.dirman".config.workspaces = {
-          notes = "~/Notes";
+        "core.dirman".config = {
+          workspaces = {
+            notes = "~/Notes";
+          };
+          default_workspace = "notes";
         };
 
         "core.concealer".__empty = null;
