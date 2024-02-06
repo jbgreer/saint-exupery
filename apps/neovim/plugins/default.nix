@@ -18,6 +18,7 @@
     ./telescope.nix
     ./treesitter.nix
     ./vimtex.nix
+    ./which-key.nix
   ];
 
   programs.nixvim = {
