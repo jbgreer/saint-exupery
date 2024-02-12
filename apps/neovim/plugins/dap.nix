@@ -5,7 +5,7 @@
     adapters = {
       executables = {
         mix_task = {
-          #args = [ "--trace" ];
+          args = null;
           command = "elixir-debugger";
           #options = {
           #  cwd =  null;
@@ -31,17 +31,17 @@
     configurations = {
       elixir = [
         {
-        type = "mix_task";
-        name = "mix (Default tasks)";
-        request = "launch";
-        startApps = true;
+          type = "mix_task";
+          name = "mix (Default tasks)";
+          request = "launch";
+          startApps = true;
         }
         {
           type = "mix_task";
           name = "mix test";
           request = "launch";
-          #taskArgs = [ "--trace" ];
-          startApps = true;
+          taskArgs = [ "--trace" ];
+          startApps = false;
           #projectDir = "${workspaceRoot}";
           requireFiles = [
             "test/**/test_helper.exs"

@@ -60,6 +60,7 @@
     ../apps/direnv.nix
     ../apps/fzf.nix
     ../apps/git.nix
+    ../apps/helix.nix
     ../apps/kitty.nix
     ../apps/neovim/neovim.nix
     ../apps/starship.nix
